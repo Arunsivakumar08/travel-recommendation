@@ -4,192 +4,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Explorer</title>
+<title>Travel Explorer | Discover the World</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #222;
+  font-family: Arial, sans-serif;
+  color: #263238;
+  background: #f5f8fa;
+  line-height: 1.6;
 }
 
 header {
-    background: #12372a;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  background: #063b4c;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-header h2 {
-    color: #adf0c0;
+.logo {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 nav {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav a:hover {
-    color: #adf0c0;
+  color: #ffd166;
 }
 
 .hero {
-    min-height: 450px;
-    background: linear-gradient(#0007,#0007),
-    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600")
-    center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 30px;
+  min-height: 430px;
+  background: linear-gradient(#0007, #0007),
+  url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600")
+  center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 19px;
-    margin-bottom: 25px;
+  font-size: 19px;
+  margin-bottom: 25px;
 }
 
 .search-box {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  width: min(500px, 100%);
 }
 
-input, textarea {
-    padding: 13px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
 }
 
 button {
-    padding: 13px 22px;
-    background: #198754;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
+  background: #f4a261;
+  color: #172b34;
+  border: none;
+  padding: 13px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.search-box button {
+  border-radius: 0 5px 5px 0;
 }
 
 button:hover {
-    background: #126b41;
+  background: #e98b40;
 }
 
 section {
-    padding: 55px 8%;
+  padding: 65px 7%;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #12372a;
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #063b4c;
+  font-size: 32px;
 }
 
-.intro {
-    text-align: center;
-    max-width: 750px;
-    margin: auto;
-    line-height: 1.8;
+.about {
+  background: white;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.about-content p {
+  margin: 15px 0;
+}
+
+.team-guidelines {
+  background: #eaf4f6;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 25px;
+  text-align: left;
+}
+
+.team-guidelines h3 {
+  color: #063b4c;
+  margin-bottom: 10px;
+}
+
+.team-guidelines ul {
+  padding-left: 25px;
+}
+
+.team-guidelines li {
+  margin: 8px 0;
+}
+
+.recommendations {
+  background: #f5f8fa;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
 }
 
 .card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 12px #0002;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px #00000012;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
 .card-content {
-    padding: 18px;
+  padding: 20px;
 }
 
 .card h3 {
-    margin-bottom: 10px;
-    color: #198754;
+  color: #063b4c;
+  margin-bottom: 8px;
 }
 
 .card p {
-    line-height: 1.6;
-}
-
-#results {
-    display: none;
-}
-
-#results h2 {
-    margin-bottom: 25px;
+  color: #52636b;
 }
 
 .contact {
-    background: #e6f1eb;
+  background: white;
 }
 
-.contact form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.contact-container {
+  max-width: 750px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+.contact-info {
+  background: #063b4c;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccd5d9;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: #063b4c;
+  color: white;
 }
 
 footer {
-    background: #12372a;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background: #063b4c;
+  color: white;
+  text-align: center;
+  padding: 22px;
 }
 
-@media(max-width:600px) {
-    header {
-        justify-content: center;
-    }
+.no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 20px;
+}
 
-    nav {
-        justify-content: center;
-    }
+@media(max-width: 700px) {
+  header {
+    justify-content: center;
+  }
 
-    .hero h1 {
-        font-size: 32px;
-    }
+  nav {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 45px 5%;
+  }
 }
 </style>
 </head>
@@ -197,224 +289,223 @@ footer {
 <body>
 
 <header>
-    <h2>Travel Explorer</h2>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#beaches">Beaches</a>
-        <a href="#temples">Temples</a>
-        <a href="#countries">Countries</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+  <div class="logo">Travel Explorer</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#beaches">Beaches</a>
+    <a href="#temples">Temples</a>
+    <a href="#countries">Countries</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
 </header>
 
-<div class="hero" id="home">
-    <h1>Explore The World</h1>
-    <p>Discover beautiful destinations and plan your next adventure.</p>
+<main>
 
-    <div class="search-box">
-        <input type="text" id="searchInput"
-        placeholder="Search beach, temple or country">
+<section class="hero" id="home">
+  <h1>Explore the World</h1>
+  <p>Discover beautiful destinations and create unforgettable memories.</p>
 
-        <button onclick="searchPlaces()">Search</button>
-        <button onclick="clearSearch()">Clear</button>
-    </div>
-</div>
-
-<section id="about">
-    <h2>About Us</h2>
-    <div class="intro">
-        <p>
-        Welcome to Travel Explorer! We help travellers discover
-        amazing destinations around the world. Our website provides
-        recommendations for beautiful beaches, historical temples
-        and wonderful countries. Explore new places and make
-        unforgettable memories with us.
-        </p>
-    </div>
+  <div class="search-box">
+    <input type="text" id="searchInput"
+      placeholder="Search destinations...">
+    <button onclick="searchPlaces()">Search</button>
+  </div>
 </section>
 
-<section id="results">
-    <h2>Search Results</h2>
-    <div class="cards" id="resultCards"></div>
+<section class="about" id="about">
+  <h2 class="section-title">About Us</h2>
+
+  <div class="about-content">
+    <p>
+      Welcome to Travel Explorer! We are a travel recommendation
+      company dedicated to helping people discover amazing
+      destinations around the world.
+    </p>
+
+    <p>
+      Our mission is to make travel planning simple and enjoyable
+      by sharing information about beautiful beaches, historic
+      temples, popular countries and exciting travel experiences.
+    </p>
+
+    <div class="team-guidelines">
+      <h3>Team Member Guidelines</h3>
+      <ul>
+        <li>Provide accurate and updated information about destinations.</li>
+        <li>Use reliable sources when researching travel locations.</li>
+        <li>Communicate respectfully with customers and team members.</li>
+        <li>Respond to customer enquiries in a timely manner.</li>
+        <li>Protect customer contact information and privacy.</li>
+        <li>Keep website content clear, helpful and easy to understand.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section id="beaches">
-    <h2>Beautiful Beaches</h2>
-    <div class="cards">
+<section class="recommendations" id="beaches">
+  <h2 class="section-title">Beautiful Beaches</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">
-            <div class="card-content">
-                <h3>Maldives Beach</h3>
-                <p>Enjoy crystal clear water and beautiful white sand beaches.</p>
-            </div>
-        </div>
+  <div class="cards">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600">
-            <div class="card-content">
-                <h3>Bali Beach</h3>
-                <p>Experience tropical beauty and peaceful ocean views.</p>
-            </div>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700"
+        alt="Beautiful tropical beach">
+      <div class="card-content">
+        <h3>Maldives Beach</h3>
+        <p>Enjoy crystal-clear water, white sand and relaxing tropical scenery.</p>
+      </div>
+    </article>
 
-    </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=700"
+        alt="Tropical beach">
+      <div class="card-content">
+        <h3>Bali Beach</h3>
+        <p>Experience beautiful coastlines, sunsets and exciting water activities.</p>
+      </div>
+    </article>
+
+  </div>
 </section>
 
-<section id="temples">
-    <h2>Historical Temples</h2>
-    <div class="cards">
+<section class="recommendations" id="temples">
+  <h2 class="section-title">Historic Temples</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600">
-            <div class="card-content">
-                <h3>Meenakshi Temple</h3>
-                <p>Visit the famous historical temple in Madurai, India.</p>
-            </div>
-        </div>
+  <div class="cards">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600">
-            <div class="card-content">
-                <h3>Taj Mahal</h3>
-                <p>Discover India's beautiful historical architecture.</p>
-            </div>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=700"
+        alt="Angkor Wat temple">
+      <div class="card-content">
+        <h3>Angkor Wat</h3>
+        <p>Explore Cambodia's famous ancient temple complex and its architecture.</p>
+      </div>
+    </article>
 
-    </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700"
+        alt="Indian temple architecture">
+      <div class="card-content">
+        <h3>Taj Mahal</h3>
+        <p>Visit India's iconic monument, known for its beautiful architecture.</p>
+      </div>
+    </article>
+
+  </div>
 </section>
 
-<section id="countries">
-    <h2>Explore Countries</h2>
-    <div class="cards">
+<section class="recommendations" id="countries">
+  <h2 class="section-title">Explore Countries</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600">
-            <div class="card-content">
-                <h3>Japan</h3>
-                <p>Explore Japanese culture, nature and beautiful cities.</p>
-            </div>
-        </div>
+  <div class="cards">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600">
-            <div class="card-content">
-                <h3>Italy</h3>
-                <p>Experience amazing architecture and delicious food.</p>
-            </div>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700"
+        alt="Japan city scenery">
+      <div class="card-content">
+        <h3>Japan</h3>
+        <p>Discover traditional culture, modern cities and beautiful landscapes.</p>
+      </div>
+    </article>
 
-    </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700"
+        alt="Italy coastal scenery">
+      <div class="card-content">
+        <h3>Italy</h3>
+        <p>Enjoy historic cities, delicious food and amazing coastal destinations.</p>
+      </div>
+    </article>
+
+  </div>
 </section>
 
 <section class="contact" id="contact">
-    <h2>Contact Us</h2>
+  <h2 class="section-title">Contact Us</h2>
 
-    <form onsubmit="sendMessage(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <p>Have a question or need travel guidance? Contact our team.</p>
+      <p><strong>Email:</strong><br>
+        arunsivakumar1920@gmail.com
+      </p>
+      <p><strong>Company:</strong><br>
+        Travel Explorer
+      </p>
+    </div>
+
+    <form class="contact-form"
+      action="https://formsubmit.co/arunsivakumar1920@gmail.com"
+      method="POST">
+
+      <input type="hidden" name="_subject"
+        value="New message from Travel Explorer website">
+
+      <input type="hidden" name="_template" value="table">
+
+      <input type="text" name="name"
+        placeholder="Your Name" required>
+
+      <input type="email" name="email"
+        placeholder="Your Email Address" required>
+
+      <textarea name="message"
+        placeholder="Write your message here..."
+        required></textarea>
+
+      <button type="submit">Send Message</button>
+
     </form>
+
+  </div>
 </section>
 
+</main>
+
 <footer>
-    <p>© 2026 Travel Explorer | Explore the World</p>
+  <p>© 2026 Travel Explorer. All Rights Reserved.</p>
+  <p>Discover • Explore • Experience</p>
 </footer>
 
 <script>
-
-const destinations = [
-    {
-        name: "Maldives Beach",
-        category: "beach",
-        description: "Crystal clear water and white sand.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
-    },
-    {
-        name: "Bali Beach",
-        category: "beach",
-        description: "Beautiful tropical beaches.",
-        image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600"
-    },
-    {
-        name: "Meenakshi Temple",
-        category: "temple",
-        description: "Famous temple in Madurai.",
-        image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600"
-    },
-    {
-        name: "Taj Mahal",
-        category: "temple",
-        description: "Beautiful historical architecture in India.",
-        image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600"
-    },
-    {
-        name: "Japan",
-        category: "country",
-        description: "Discover Japanese culture and nature.",
-        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600"
-    },
-    {
-        name: "Italy",
-        category: "country",
-        description: "Explore beautiful Italian cities.",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600"
-    }
-];
-
 function searchPlaces() {
+  const input = document.getElementById("searchInput");
+  const query = input.value.trim().toLowerCase();
+  const cards = document.querySelectorAll(".card");
 
-    const query = document.getElementById("searchInput")
-        .value.trim().toLowerCase();
+  cards.forEach(card => {
+    const content = card.innerText.toLowerCase();
+    card.style.display = content.includes(query) ? "block" : "none";
+  });
 
-    const results = document.getElementById("results");
-    const cards = document.getElementById("resultCards");
+  const sections = document.querySelectorAll(".recommendations");
 
-    if (!query) {
-        alert("Please enter a destination!");
-        return;
-    }
-
-    const matches = destinations.filter(place =>
-        place.name.toLowerCase().includes(query) ||
-        place.category.includes(query)
+  sections.forEach(section => {
+    const visibleCards = section.querySelectorAll(
+      ".card:not([style*='display: none'])"
     );
 
-    cards.innerHTML = "";
+    section.style.display =
+      visibleCards.length > 0 ? "block" : "none";
+  });
 
-    if (matches.length === 0) {
-        cards.innerHTML = "<p>No destinations found. Try beach, temple or country.</p>";
-    } else {
-        matches.forEach(place => {
-            cards.innerHTML += `
-                <div class="card">
-                    <img src="${place.image}" alt="${place.name}">
-                    <div class="card-content">
-                        <h3>${place.name}</h3>
-                        <p>${place.description}</p>
-                    </div>
-                </div>
-            `;
-        });
+  if (query === "") {
+    cards.forEach(card => card.style.display = "block");
+    sections.forEach(section => section.style.display = "block");
+  }
+}
+
+document.getElementById("searchInput").addEventListener(
+  "keydown", function(event) {
+    if (event.key === "Enter") {
+      searchPlaces();
     }
-
-    results.style.display = "block";
-    results.scrollIntoView({behavior: "smooth"});
-}
-
-function clearSearch() {
-    document.getElementById("searchInput").value = "";
-    document.getElementById("results").style.display = "none";
-}
-
-function sendMessage(event) {
-    event.preventDefault();
-    alert("Thank you! Your message has been received.");
-    event.target.reset();
-}
-
+  }
+);
 </script>
 
 </body>
