@@ -4,14 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Explore World - Travel Recommendations</title>
+<title>Travel Explorer</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -21,117 +20,176 @@ body {
 }
 
 header {
-    background: #102a43;
+    background: #12372a;
     color: white;
-    padding: 25px;
-    text-align: center;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    color: #adf0c0;
 }
 
 nav {
-    background: #243b53;
-    padding: 18px;
-    text-align: center;
-    position: sticky;
-    top: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 15px;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #ffd166;
+    color: #adf0c0;
 }
 
 .hero {
-    background: linear-gradient(120deg,#087e8b,#102a43);
-    color: white;
+    min-height: 450px;
+    background: linear-gradient(#0007,#0007),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600")
+    center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 90px 20px;
+    color: white;
+    padding: 30px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 25px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input, textarea {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 button {
-    background: #ffb703;
+    padding: 13px 22px;
+    background: #198754;
+    color: white;
     border: none;
-    padding: 12px 22px;
-    cursor: pointer;
     border-radius: 6px;
-    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #126b41;
 }
 
 section {
-    padding: 50px 8%;
-    text-align: center;
+    padding: 55px 8%;
 }
 
 h2 {
+    text-align: center;
     margin-bottom: 25px;
-    color: #102a43;
+    color: #12372a;
+}
+
+.intro {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
     gap: 25px;
 }
 
 .card {
     background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #0002;
 }
 
 .card img {
     width: 100%;
     height: 190px;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+.card-content {
+    padding: 18px;
 }
 
 .card h3 {
-    margin: 15px;
+    margin-bottom: 10px;
+    color: #198754;
 }
 
 .card p {
-    margin-bottom: 15px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 13px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.contact {
-    max-width: 550px;
-    margin: auto;
-}
-
-footer {
-    background: #102a43;
-    color: white;
-    padding: 25px;
-    text-align: center;
+    line-height: 1.6;
 }
 
 #results {
-    margin-top: 25px;
+    display: none;
+}
+
+#results h2 {
+    margin-bottom: 25px;
+}
+
+.contact {
+    background: #e6f1eb;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer {
+    background: #12372a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
 }
 </style>
 </head>
@@ -139,120 +197,224 @@ footer {
 <body>
 
 <header>
-<h1>🌍 Explore World</h1>
-<p>Discover Amazing Places Around The World</p>
+    <h2>Travel Explorer</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#beaches">Beaches</a>
+        <a href="#temples">Temples</a>
+        <a href="#countries">Countries</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
 </header>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About Us</a>
-<a href="#beaches">Beaches</a>
-<a href="#temples">Temples</a>
-<a href="#countries">Countries</a>
-<a href="#contact">Contact Us</a>
-</nav>
-
 <div class="hero" id="home">
-<h1>Explore Your Dream Destination</h1>
-<p>Find beautiful places, amazing beaches and historic temples.</p>
-<button onclick="document.getElementById('beaches').scrollIntoView()">
-Explore Now
-</button>
+    <h1>Explore The World</h1>
+    <p>Discover beautiful destinations and plan your next adventure.</p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search beach, temple or country">
+
+        <button onclick="searchPlaces()">Search</button>
+        <button onclick="clearSearch()">Clear</button>
+    </div>
 </div>
 
 <section id="about">
-<h2>About Us</h2>
-<p>
-Welcome to Explore World! Our website helps travelers discover
-beautiful beaches, historic temples and wonderful countries.
-We provide travel recommendations to make your journey memorable.
-Explore new destinations and create unforgettable memories!
-</p>
+    <h2>About Us</h2>
+    <div class="intro">
+        <p>
+        Welcome to Travel Explorer! We help travellers discover
+        amazing destinations around the world. Our website provides
+        recommendations for beautiful beaches, historical temples
+        and wonderful countries. Explore new places and make
+        unforgettable memories with us.
+        </p>
+    </div>
+</section>
+
+<section id="results">
+    <h2>Search Results</h2>
+    <div class="cards" id="resultCards"></div>
 </section>
 
 <section id="beaches">
-<h2>🏖️ Beautiful Beach Recommendations</h2>
-<div class="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-<h3>Maldives Beach</h3>
-<p>Enjoy crystal clear water and beautiful white sand.</p>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206">
-<h3>Bali Beach</h3>
-<p>Experience tropical beauty and amazing sunsets.</p>
-</div>
-</div>
+    <h2>Beautiful Beaches</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">
+            <div class="card-content">
+                <h3>Maldives Beach</h3>
+                <p>Enjoy crystal clear water and beautiful white sand beaches.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600">
+            <div class="card-content">
+                <h3>Bali Beach</h3>
+                <p>Experience tropical beauty and peaceful ocean views.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <section id="temples">
-<h2>🛕 Famous Temple Recommendations</h2>
-<div class="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81">
-<h3>Angkor Wat</h3>
-<p>Explore the magnificent ancient temple in Cambodia.</p>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1548013146-72479768bada">
-<h3>Taj Mahal</h3>
-<p>Discover India's beautiful historic monument.</p>
-</div>
-</div>
+    <h2>Historical Temples</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600">
+            <div class="card-content">
+                <h3>Meenakshi Temple</h3>
+                <p>Visit the famous historical temple in Madurai, India.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600">
+            <div class="card-content">
+                <h3>Taj Mahal</h3>
+                <p>Discover India's beautiful historical architecture.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <section id="countries">
-<h2>🌎 Country Recommendations</h2>
-<input type="text" id="countryInput"
-placeholder="Search a country...">
-<button onclick="searchCountry()">Search</button>
-<div id="results"></div>
+    <h2>Explore Countries</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600">
+            <div class="card-content">
+                <h3>Japan</h3>
+                <p>Explore Japanese culture, nature and beautiful cities.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600">
+            <div class="card-content">
+                <h3>Italy</h3>
+                <p>Experience amazing architecture and delicious food.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<section id="contact">
-<h2>Contact Us</h2>
-<div class="contact">
-<form onsubmit="sendMessage(event)">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Your Message" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-<p id="message"></p>
-</div>
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </section>
 
 <footer>
-<p>© 2026 Explore World | Travel With Happiness 🌍</p>
+    <p>© 2026 Travel Explorer | Explore the World</p>
 </footer>
 
 <script>
-const countries = {
-    india: "Explore India's culture, food and beautiful destinations.",
-    japan: "Discover Japan's temples, technology and cherry blossoms.",
-    france: "Enjoy Paris, the Eiffel Tower and French culture.",
-    italy: "Explore Rome, Venice and amazing Italian food.",
-    australia: "Discover beautiful beaches and unique wildlife."
-};
 
-function searchCountry() {
-    let country = document.getElementById("countryInput")
-        .value.toLowerCase().trim();
+const destinations = [
+    {
+        name: "Maldives Beach",
+        category: "beach",
+        description: "Crystal clear water and white sand.",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
+    },
+    {
+        name: "Bali Beach",
+        category: "beach",
+        description: "Beautiful tropical beaches.",
+        image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600"
+    },
+    {
+        name: "Meenakshi Temple",
+        category: "temple",
+        description: "Famous temple in Madurai.",
+        image: "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=600"
+    },
+    {
+        name: "Taj Mahal",
+        category: "temple",
+        description: "Beautiful historical architecture in India.",
+        image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600"
+    },
+    {
+        name: "Japan",
+        category: "country",
+        description: "Discover Japanese culture and nature.",
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600"
+    },
+    {
+        name: "Italy",
+        category: "country",
+        description: "Explore beautiful Italian cities.",
+        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600"
+    }
+];
 
-    let result = countries[country];
+function searchPlaces() {
 
-    document.getElementById("results").innerHTML = result
-        ? "<h3>" + country.toUpperCase() + "</h3><p>" + result + "</p>"
-        : "<p>Country not found. Try India, Japan, France, Italy or Australia.</p>";
+    const query = document.getElementById("searchInput")
+        .value.trim().toLowerCase();
+
+    const results = document.getElementById("results");
+    const cards = document.getElementById("resultCards");
+
+    if (!query) {
+        alert("Please enter a destination!");
+        return;
+    }
+
+    const matches = destinations.filter(place =>
+        place.name.toLowerCase().includes(query) ||
+        place.category.includes(query)
+    );
+
+    cards.innerHTML = "";
+
+    if (matches.length === 0) {
+        cards.innerHTML = "<p>No destinations found. Try beach, temple or country.</p>";
+    } else {
+        matches.forEach(place => {
+            cards.innerHTML += `
+                <div class="card">
+                    <img src="${place.image}" alt="${place.name}">
+                    <div class="card-content">
+                        <h3>${place.name}</h3>
+                        <p>${place.description}</p>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    results.style.display = "block";
+    results.scrollIntoView({behavior: "smooth"});
+}
+
+function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("results").style.display = "none";
 }
 
 function sendMessage(event) {
     event.preventDefault();
-    document.getElementById("message").innerText =
-        "Thank you! Your message has been received.";
+    alert("Thank you! Your message has been received.");
     event.target.reset();
 }
+
 </script>
 
 </body>
