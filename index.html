@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore World - Travel Recommendations</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+header {
+    background: #102a43;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background: #243b53;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    background: linear-gradient(120deg,#087e8b,#102a43);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+button {
+    background: #ffb703;
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+section {
+    padding: 50px 8%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #102a43;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #ccc;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 15px;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contact {
+    max-width: 550px;
+    margin: auto;
+}
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+#results {
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌍 Explore World</h1>
+<p>Discover Amazing Places Around The World</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#beaches">Beaches</a>
+<a href="#temples">Temples</a>
+<a href="#countries">Countries</a>
+<a href="#contact">Contact Us</a>
+</nav>
+
+<div class="hero" id="home">
+<h1>Explore Your Dream Destination</h1>
+<p>Find beautiful places, amazing beaches and historic temples.</p>
+<button onclick="document.getElementById('beaches').scrollIntoView()">
+Explore Now
+</button>
+</div>
+
+<section id="about">
+<h2>About Us</h2>
+<p>
+Welcome to Explore World! Our website helps travelers discover
+beautiful beaches, historic temples and wonderful countries.
+We provide travel recommendations to make your journey memorable.
+Explore new destinations and create unforgettable memories!
+</p>
+</section>
+
+<section id="beaches">
+<h2>🏖️ Beautiful Beach Recommendations</h2>
+<div class="cards">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<h3>Maldives Beach</h3>
+<p>Enjoy crystal clear water and beautiful white sand.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206">
+<h3>Bali Beach</h3>
+<p>Experience tropical beauty and amazing sunsets.</p>
+</div>
+</div>
+</section>
+
+<section id="temples">
+<h2>🛕 Famous Temple Recommendations</h2>
+<div class="cards">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81">
+<h3>Angkor Wat</h3>
+<p>Explore the magnificent ancient temple in Cambodia.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada">
+<h3>Taj Mahal</h3>
+<p>Discover India's beautiful historic monument.</p>
+</div>
+</div>
+</section>
+
+<section id="countries">
+<h2>🌎 Country Recommendations</h2>
+<input type="text" id="countryInput"
+placeholder="Search a country...">
+<button onclick="searchCountry()">Search</button>
+<div id="results"></div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="contact">
+<form onsubmit="sendMessage(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p id="message"></p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Explore World | Travel With Happiness 🌍</p>
+</footer>
+
+<script>
+const countries = {
+    india: "Explore India's culture, food and beautiful destinations.",
+    japan: "Discover Japan's temples, technology and cherry blossoms.",
+    france: "Enjoy Paris, the Eiffel Tower and French culture.",
+    italy: "Explore Rome, Venice and amazing Italian food.",
+    australia: "Discover beautiful beaches and unique wildlife."
+};
+
+function searchCountry() {
+    let country = document.getElementById("countryInput")
+        .value.toLowerCase().trim();
+
+    let result = countries[country];
+
+    document.getElementById("results").innerHTML = result
+        ? "<h3>" + country.toUpperCase() + "</h3><p>" + result + "</p>"
+        : "<p>Country not found. Try India, Japan, France, Italy or Australia.</p>";
+}
+
+function sendMessage(event) {
+    event.preventDefault();
+    document.getElementById("message").innerText =
+        "Thank you! Your message has been received.";
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
