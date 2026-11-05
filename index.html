@@ -3,26 +3,30 @@ function searchPlaces() {
   const query = document.getElementById("searchInput")
     .value.trim().toLowerCase();
 
-  const cards = document.querySelectorAll(".card");
   const sections = document.querySelectorAll(".recommendations");
 
-  if (query === "") {
-    cards.forEach(card => card.style.display = "block");
-    sections.forEach(section => section.style.display = "block");
-    return;
-  }
-
-  cards.forEach(card => {
-    const content = card.innerText.toLowerCase();
-    card.style.display = content.includes(query) ? "block" : "none";
-  });
-
   sections.forEach(section => {
-    const visibleCards = Array.from(
-      section.querySelectorAll(".card")
-    ).some(card => card.style.display !== "none");
+    const heading = section.querySelector("h2, h3");
+    const category = heading ? heading.innerText.toLowerCase() : "";
 
-    section.style.display = visibleCards ? "block" : "none";
+    const cards = section.querySelectorAll(".card");
+
+    const categoryMatch = category.includes(query);
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const content = card.innerText.toLowerCase();
+
+      if (categoryMatch || content.includes(query)) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    section.style.display = visibleCount > 0 ? "block" : "none";
   });
 }
 
