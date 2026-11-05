@@ -13,15 +13,8 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #f5f8fa;
-  color: #263238;
-}
+html { scroll-behavior: smooth; }
+body { background: #f5f8fa; color: #263238; }
 
 header {
   background: #073b4c;
@@ -33,28 +26,10 @@ header {
   flex-wrap: wrap;
   gap: 15px;
 }
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ffd166;
-}
+.logo { font-size: 25px; font-weight: bold; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+nav a:hover { color: #ffd166; }
 
 .hero {
   text-align: center;
@@ -62,24 +37,14 @@ nav a:hover {
   background: linear-gradient(135deg, #118ab2, #073b4c);
   color: white;
 }
-
-.hero h1 {
-  font-size: 45px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
-}
-
+.hero h1 { font-size: 45px; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin-bottom: 25px; }
 .search-box {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .search-box input {
   width: 300px;
   max-width: 100%;
@@ -88,7 +53,6 @@ nav a:hover {
   border-radius: 6px;
   font-size: 16px;
 }
-
 button {
   padding: 13px 20px;
   border: none;
@@ -98,29 +62,17 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+button:hover { background: #f4b942; }
 
-button:hover {
-  background: #f4b942;
-}
-
-.about, .contact {
-  padding: 55px 8%;
-  text-align: center;
-}
-
+.about, .contact { padding: 55px 8%; text-align: center; }
 .section-title {
   text-align: center;
   font-size: 30px;
   color: #073b4c;
   margin-bottom: 25px;
 }
-
-.about-content {
-  max-width: 850px;
-  margin: auto;
-  line-height: 1.8;
-}
-
+.about-content { max-width: 850px; margin: auto; line-height: 1.8; }
+.about-content > p { margin-bottom: 15px; }
 .team-guidelines {
   margin-top: 20px;
   text-align: left;
@@ -128,47 +80,25 @@ button:hover {
   padding: 22px;
   border-radius: 10px;
 }
+.team-guidelines h3 { color: #073b4c; margin: 15px 0 8px; }
+.team-guidelines li { margin: 10px 0 0 22px; }
 
-.team-guidelines li {
-  margin: 10px 0 0 22px;
-}
-
-.recommendations {
-  padding: 45px 8%;
-}
-
+.recommendations { padding: 45px 8%; }
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
 }
-
 .card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-.card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-content {
-  padding: 18px;
-}
-
-.card h3 {
-  color: #073b4c;
-  margin-bottom: 10px;
-}
-
-.card p {
-  line-height: 1.6;
-}
+.card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+.card-content { padding: 18px; }
+.card h3 { color: #073b4c; margin-bottom: 10px; }
+.card p { line-height: 1.6; }
 
 .contact-container {
   max-width: 700px;
@@ -178,36 +108,17 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-.contact-info {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.contact-form input,
-.contact-form textarea {
+.contact-info { margin-bottom: 20px; line-height: 1.8; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form textarea {
   width: 100%;
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
 }
-
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.contact-form button {
-  background: #073b4c;
-  color: white;
-}
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button { background: #073b4c; color: white; }
 
 footer {
   background: #073b4c;
@@ -215,28 +126,17 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
 @media(max-width: 700px) {
-  header {
-    justify-content: center;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
+  header { justify-content: center; }
+  nav { justify-content: center; }
+  .hero h1 { font-size: 32px; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="logo">Travel Explorer</div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
@@ -247,10 +147,8 @@ footer {
 <section class="hero" id="home">
   <h1>Explore the World</h1>
   <p>Discover beautiful destinations and create unforgettable memories.</p>
-
   <div class="search-box">
-    <input type="text" id="searchInput"
-      placeholder="Search beaches, temples, countries...">
+    <input type="text" id="searchInput" placeholder="Search beaches, temples, countries...">
     <button onclick="searchPlaces()">Search</button>
     <button onclick="clearSearch()">Clear</button>
   </div>
@@ -258,27 +156,27 @@ footer {
 
 <section class="about" id="about">
   <h2 class="section-title">About Us</h2>
-
   <div class="about-content">
-    <p>
-      Welcome to Travel Explorer! We are a travel recommendation
-      company dedicated to helping people discover amazing
-      destinations around the world.
-    </p>
-
-    <p>
-      Our mission is to make travel planning simple and enjoyable
-      by sharing information about beautiful beaches, historic
-      temples, popular countries and exciting travel experiences.
-    </p>
+    <p>Welcome to Travel Explorer! We are a travel recommendation company dedicated to helping people discover amazing destinations around the world.</p>
+    <p>Our mission is to make travel planning simple and enjoyable by sharing information about beautiful beaches, historic temples, popular countries and exciting travel experiences.</p>
 
     <div class="team-guidelines">
-      <h3>Team Member Guidelines</h3>
+      <h3>Our Team</h3>
       <ul>
-        <li>Provide accurate travel information.</li>
-        <li>Help visitors discover beautiful destinations.</li>
-        <li>Keep the website information updated.</li>
-        <li>Provide a friendly experience to all visitors.</li>
+        <li>Arun – Founder and Project Leader</li>
+        <li>Travel Research Team – Destination Research</li>
+        <li>Web Development Team – Website Design and Development</li>
+      </ul>
+
+      <h3>Our Vision</h3>
+      <p>To become a trusted travel recommendation platform that makes discovering destinations simple, enjoyable and accessible to everyone.</p>
+
+      <h3>Our Values</h3>
+      <ul>
+        <li>Trust and honesty</li>
+        <li>Creativity and innovation</li>
+        <li>Customer satisfaction</li>
+        <li>Quality and accurate information</li>
       </ul>
     </div>
   </div>
@@ -286,20 +184,16 @@ footer {
 
 <section class="recommendations" id="beaches">
   <h2 class="section-title">Beautiful Beaches</h2>
-
   <div class="cards">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700"
-        alt="Beautiful Maldives beach">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700" alt="Beautiful Maldives beach">
       <div class="card-content">
         <h3>Maldives Beach</h3>
         <p>Enjoy crystal-clear water, white sand and relaxing tropical scenery.</p>
       </div>
     </article>
-
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=700"
-        alt="Beautiful Bali beach">
+      <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=700" alt="Beautiful Bali beach">
       <div class="card-content">
         <h3>Bali Beach</h3>
         <p>Experience beautiful coastlines, sunsets and exciting water activities.</p>
@@ -310,20 +204,16 @@ footer {
 
 <section class="recommendations" id="temples">
   <h2 class="section-title">Historic Temples</h2>
-
   <div class="cards">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=700"
-        alt="Angkor Wat temple">
+      <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=700" alt="Angkor Wat temple">
       <div class="card-content">
         <h3>Angkor Wat</h3>
         <p>Explore Cambodia's famous ancient temple complex and its architecture.</p>
       </div>
     </article>
-
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700"
-        alt="Taj Mahal">
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700" alt="Taj Mahal">
       <div class="card-content">
         <h3>Taj Mahal</h3>
         <p>Visit India's iconic monument, known for its beautiful architecture.</p>
@@ -334,20 +224,16 @@ footer {
 
 <section class="recommendations" id="countries">
   <h2 class="section-title">Explore Countries</h2>
-
   <div class="cards">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700"
-        alt="Japan scenery">
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700" alt="Japan scenery">
       <div class="card-content">
         <h3>Japan</h3>
         <p>Discover traditional culture, modern cities and beautiful landscapes.</p>
       </div>
     </article>
-
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700"
-        alt="Italy scenery">
+      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700" alt="Italy scenery">
       <div class="card-content">
         <h3>Italy</h3>
         <p>Enjoy historic cities, delicious food and amazing coastal destinations.</p>
@@ -358,7 +244,6 @@ footer {
 
 <section class="contact" id="contact">
   <h2 class="section-title">Contact Us</h2>
-
   <div class="contact-container">
     <div class="contact-info">
       <h3>Get In Touch</h3>
@@ -366,30 +251,15 @@ footer {
       <p><strong>Company:</strong> Travel Explorer</p>
     </div>
 
-    <form class="contact-form"
-      action="https://api.web3forms.com/submit"
-      method="POST">
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="9b9c8ea8-920c-4304-91a4-273241d6616c">
+      <input type="hidden" name="subject" value="New message from Travel Explorer website">
+      <input type="hidden" name="from_name" value="Travel Explorer Website">
 
-      <input type="hidden" name="access_key"
-        value="9b9c8ea8-920c-4304-91a4-273241d6616c">
-
-      <input type="hidden" name="subject"
-        value="New message from Travel Explorer website">
-
-      <input type="hidden" name="from_name"
-        value="Travel Explorer Website">
-
-      <input type="text" name="name"
-        placeholder="Your Name" required>
-
-      <input type="email" name="email"
-        placeholder="Your Email Address" required>
-
-      <textarea name="message"
-        placeholder="Write your message here..."
-        required></textarea>
-
-      <button type="submit">Send Message</button>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <textarea name="message" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Submit</button>
     </form>
   </div>
 </section>
@@ -400,9 +270,7 @@ footer {
 
 <script>
 function searchPlaces() {
-  const query = document.getElementById("searchInput")
-    .value.trim().toLowerCase();
-
+  const query = document.getElementById("searchInput").value.trim().toLowerCase();
   const sections = document.querySelectorAll(".recommendations");
 
   sections.forEach(section => {
@@ -418,33 +286,24 @@ function searchPlaces() {
 
     cards.forEach(card => {
       const content = card.innerText.toLowerCase();
-
-      const show = query === "" ||
-        categoryMatch ||
-        content.includes(query);
-
+      const show = query === "" || categoryMatch || content.includes(query);
       card.style.display = show ? "block" : "none";
-
       if (show) visibleCount++;
     });
 
-    section.style.display =
-      visibleCount > 0 ? "block" : "none";
+    section.style.display = visibleCount > 0 ? "block" : "none";
   });
 }
 
 function clearSearch() {
   document.getElementById("searchInput").value = "";
-
   document.querySelectorAll(".recommendations").forEach(section => {
     section.style.display = "block";
-
     section.querySelectorAll(".card").forEach(card => {
       card.style.display = "block";
     });
   });
 }
 </script>
-
 </body>
 </html>
