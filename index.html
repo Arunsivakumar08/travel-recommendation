@@ -256,12 +256,6 @@ footer {
   padding: 22px;
 }
 
-.no-results {
-  text-align: center;
-  grid-column: 1 / -1;
-  padding: 20px;
-}
-
 @media(max-width: 700px) {
   header {
     justify-content: center;
@@ -290,7 +284,6 @@ footer {
 
 <header>
   <div class="logo">Travel Explorer</div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
@@ -306,7 +299,6 @@ footer {
 <section class="hero" id="home">
   <h1>Explore the World</h1>
   <p>Discover beautiful destinations and create unforgettable memories.</p>
-
   <div class="search-box">
     <input type="text" id="searchInput"
       placeholder="Search destinations...">
@@ -316,20 +308,17 @@ footer {
 
 <section class="about" id="about">
   <h2 class="section-title">About Us</h2>
-
   <div class="about-content">
     <p>
       Welcome to Travel Explorer! We are a travel recommendation
       company dedicated to helping people discover amazing
       destinations around the world.
     </p>
-
     <p>
       Our mission is to make travel planning simple and enjoyable
       by sharing information about beautiful beaches, historic
       temples, popular countries and exciting travel experiences.
     </p>
-
     <div class="team-guidelines">
       <h3>Team Member Guidelines</h3>
       <ul>
@@ -346,9 +335,7 @@ footer {
 
 <section class="recommendations" id="beaches">
   <h2 class="section-title">Beautiful Beaches</h2>
-
   <div class="cards">
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700"
         alt="Beautiful tropical beach">
@@ -357,7 +344,6 @@ footer {
         <p>Enjoy crystal-clear water, white sand and relaxing tropical scenery.</p>
       </div>
     </article>
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=700"
         alt="Tropical beach">
@@ -366,15 +352,12 @@ footer {
         <p>Experience beautiful coastlines, sunsets and exciting water activities.</p>
       </div>
     </article>
-
   </div>
 </section>
 
 <section class="recommendations" id="temples">
   <h2 class="section-title">Historic Temples</h2>
-
   <div class="cards">
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=700"
         alt="Angkor Wat temple">
@@ -383,24 +366,20 @@ footer {
         <p>Explore Cambodia's famous ancient temple complex and its architecture.</p>
       </div>
     </article>
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700"
-        alt="Indian temple architecture">
+        alt="Indian monument">
       <div class="card-content">
         <h3>Taj Mahal</h3>
         <p>Visit India's iconic monument, known for its beautiful architecture.</p>
       </div>
     </article>
-
   </div>
 </section>
 
 <section class="recommendations" id="countries">
   <h2 class="section-title">Explore Countries</h2>
-
   <div class="cards">
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700"
         alt="Japan city scenery">
@@ -409,7 +388,6 @@ footer {
         <p>Discover traditional culture, modern cities and beautiful landscapes.</p>
       </div>
     </article>
-
     <article class="card">
       <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=700"
         alt="Italy coastal scenery">
@@ -418,13 +396,11 @@ footer {
         <p>Enjoy historic cities, delicious food and amazing coastal destinations.</p>
       </div>
     </article>
-
   </div>
 </section>
 
 <section class="contact" id="contact">
   <h2 class="section-title">Contact Us</h2>
-
   <div class="contact-container">
 
     <div class="contact-info">
@@ -433,19 +409,21 @@ footer {
       <p><strong>Email:</strong><br>
         arunsivakumar1920@gmail.com
       </p>
-      <p><strong>Company:</strong><br>
-        Travel Explorer
-      </p>
+      <p><strong>Company:</strong><br>Travel Explorer</p>
     </div>
 
     <form class="contact-form"
-      action="https://formsubmit.co/arunsivakumar1920@gmail.com"
+      action="https://api.web3forms.com/submit"
       method="POST">
 
-      <input type="hidden" name="_subject"
+      <input type="hidden" name="access_key"
+        value="9b9c8ea8-920c-4304-91a4-273241d6616c">
+
+      <input type="hidden" name="subject"
         value="New message from Travel Explorer website">
 
-      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="from_name"
+        value="Travel Explorer Website">
 
       <input type="text" name="name"
         placeholder="Your Name" required>
@@ -458,7 +436,6 @@ footer {
         required></textarea>
 
       <button type="submit">Send Message</button>
-
     </form>
 
   </div>
@@ -473,22 +450,22 @@ footer {
 
 <script>
 function searchPlaces() {
-  const input = document.getElementById("searchInput");
-  const query = input.value.trim().toLowerCase();
+  const query = document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
   const cards = document.querySelectorAll(".card");
+  const sections = document.querySelectorAll(".recommendations");
 
   cards.forEach(card => {
     const content = card.innerText.toLowerCase();
-    card.style.display = content.includes(query) ? "block" : "none";
+    card.style.display =
+      content.includes(query) ? "block" : "none";
   });
-
-  const sections = document.querySelectorAll(".recommendations");
 
   sections.forEach(section => {
     const visibleCards = section.querySelectorAll(
       ".card:not([style*='display: none'])"
     );
-
     section.style.display =
       visibleCards.length > 0 ? "block" : "none";
   });
